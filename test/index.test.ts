@@ -67,4 +67,15 @@ describe('FirebaseErrorMessageMapper', () => {
     const mapper = new FirebaseErrorMessageMapper()
     expect(mapper.map('')).toEqual('');
   });
+
+  it('Should not throw when passing a string without parenthesis.', () => {
+    const mapper = new FirebaseErrorMessageMapper()
+    expect(mapper.map('Firebase: Error')).toEqual('Firebase: Error');
+  });
+
+  it('Should support a singleton instance.', () => {
+    const mapper = FirebaseErrorMessageMapper.getInstance()
+    FirebaseErrorMessageMapper.getInstance().addMapping('custom-mapping', 'Custom mapping');
+    expect(mapper.map('custom-mapping')).toEqual('Custom mapping');
+  });
 });

@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "artusvranken",
   "description": "A simple library to map firebase errors to human readable messages",

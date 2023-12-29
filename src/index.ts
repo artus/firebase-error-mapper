@@ -7,12 +7,27 @@ export { FirebaseErrorMessagePair, authErrors };
  */
 export class FirebaseErrorMessageMapper {
 
+  private static instance: FirebaseErrorMessageMapper;
+
   /**
    * Create a new FirebaseErrorMessageMapper.
    * 
    * @param customMappings An array of custom mappings to add to the default mappings.
    */
   constructor(public customMappings: FirebaseErrorMessagePair[] = []) {
+  }
+
+  /**
+   * Get the FirebaseErrorMessageMapper instance.
+   * 
+   * @returns The FirebaseErrorMessageMapper instance.
+   */
+  public static getInstance(): FirebaseErrorMessageMapper {
+    if (!this.instance) {
+      this.instance = new FirebaseErrorMessageMapper();
+    }
+
+    return this.instance;
   }
 
 
