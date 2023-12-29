@@ -4,6 +4,7 @@ export type FirebaseErrorMessagePair = {
 }
 
 export const authErrors = [
+  { key: "auth/email-already-in-use", value: "The email address is already in use." },
   { key: "auth/network-request-failed", value: "A network error has occurred, please try again later." },
   { key: "auth/claims-too-large", value: "The claims payload provided exceeds the maximum allowed size of 1000 bytes." },
   { key: "auth/email-already-exists", value: "The provided email is already in use." },
